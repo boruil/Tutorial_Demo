@@ -10,6 +10,7 @@ import android.widget.EditText;
 
 
 public class MainActivity extends ActionBarActivity {
+    public final static String EXTRA_MESSAGE = "com.boruili.tutorial_demo.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public class MainActivity extends ActionBarActivity {
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();
-//        intent.putExtra(EXTRA_MESSAGE, message);
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
     }
 }
